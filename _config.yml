@@ -1,4 +1,4 @@
 theme: jekyll-theme-minimal
 title: "Implementing null-scattering path integral formulation in Mitsuba 2"
-description: "Spectrally-varying heterogeneous media rendered using hero wavelength sampling."
+description: "Spectrally-varying heterogeneous medium rendered in Mitsuba 2 using hero wavelength sampling."
 logo: "smoke_colorful_reference_logo.png"
