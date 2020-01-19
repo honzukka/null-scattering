@@ -12,7 +12,7 @@ The goal of this project is to implement the new formulation in Mitsuba 2, an up
 
 We have reproduced results and figures from the original paper to verify that our implementation works. All images on this page are rendered in Mitsuba 2.
 
-First, here are two scenes of a bunny-shaped cloud. The upper one is back-lit by a large are light source. This makes it easy to render using brute-force path tracing (_Spectral MIS_ in the figure), but difficult using next-event estimation (_NEE_ in the figure). The lower scene is side-lit by a much smaller light source. Such a scene is difficult for brute-force path tracing, but easy for next-event estimation. Because the new path integral formulation gives us full path pdfs for both method, we can combine them using MIS in an integrator which is more robust and renderes both scenes well (_Uni+NEE MIS_ in the figure).
+First, here are two scenes of a bunny-shaped cloud. The upper one is back-lit by a large area light source. This makes it easy to render using brute-force path tracing (_Spectral MIS_ in the figure), but difficult using next-event estimation (_NEE_ in the figure). The lower scene is side-lit by a much smaller light source. Such a scene is difficult for brute-force path tracing, but easy for next-event estimation. Because the new path integral formulation gives us full path pdfs for both methods, we can combine them using MIS in an integrator which is more robust and renderes both scenes well (_Uni+NEE MIS_ in the figure).
 
 ![bunny](bunny_figure.png)
 
@@ -22,7 +22,7 @@ Next, we have a scene containing a spectrally-varying heterogeneous plume of smo
 
 Lastly, we have indentified two main drawbacks of the practical implementation of the new formulation:
 
-* Some path can be absorbed by the medium and are therefore terminated. Because of this, fewer paths contribute to the result than before which leads to slightly more noise. Below, the figure on the left is rendered by a current Mitsuba 2 integrator and the figure on the right is rendered by our implementation. Both scenes and path samplin strategies are identical.
+* Some paths can be absorbed by the medium and are therefore terminated. Because of this, fewer paths contribute to the result than before which leads to slightly more noise. Below, the figure on the left is rendered by a current Mitsuba 2 integrator and the figure on the right is rendered by our implementation. Both scenes and path sampling strategies are identical.
 
 ![noise_comparison](noise_comparison.png)
 
