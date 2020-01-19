@@ -24,7 +24,7 @@ Lastly, we have indentified two main drawbacks of the practical implementation o
 
 * Some path can be absorbed by the medium and are therefore terminated. Because of this, fewer paths contribute to the result than before which leads to slightly more noise. Below, the figure on the left is rendered by a current Mitsuba 2 integrator and the figure on the right is rendered by our implementation. Both scenes and path samplin strategies are identical.
 
-![noise_old](volpath_brute_force.png) ![noise_new](null_scattering_alg1.png)
+<img src="volpath_brute_force.png" alt="noise_old" width="300"> <img src="null_scattering_alg1.png" alt="noise_new" width="300">
 
 * Because we now need to keep track of multiple full path pdfs for MIS, there are issues with accumulating them into a single-precision floating point variable. In dense media, the value after 40 bounces can easily become larger than 10^40 which is larger than the maximum that can be stored in such variables. [Miller (2019)](https://github.com/baileymiller/nullpath) uses a simple trick to solve this issue, but this increases time complexity and is also specific to the balance heuristic of MIS. A different trick would have to be used to enable power heuristic.
 
